@@ -2,7 +2,9 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // Async thunk
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const res = await fetch(
+    "https://jsonplaceholder.typicode.com/users?_limit=5"
+  );
   const data = await res.json();
   return data;
 });
